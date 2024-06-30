@@ -2,7 +2,7 @@ from cryptography.fernet import Fernet
 import os
 
 def load_key():
-    return open('key.key', 'rb').read()
+    return "oj6rNDYCABQpMGVs3gKQCpnJGVKDHJGkjvt0k4dbwgw="
 
 def decrypt(items, key):
     f=Fernet(key)

